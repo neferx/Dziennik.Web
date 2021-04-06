@@ -1,4 +1,4 @@
-# xd
+# Dziennik.Web
 
 ## Project setup
 ```
