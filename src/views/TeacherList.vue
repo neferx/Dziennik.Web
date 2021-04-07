@@ -1,58 +1,52 @@
 <template>
-  <el-container>
-    <h1>Lista nauczycieli:</h1>
-    </el-container>
-    <!-- {{ teacherList.teacherList }} -->
-
-     <el-table id="table"
-    :data="teacherList.teacherList"
-    stripe
-    style="width: 50%">
-    <el-table-column
-      prop="name"
-      label="Name"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="lastname"
-      label="Last name"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="subjects"
-      label="Subject"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="telephoneNumber"
-      label="Telephone number">
-    </el-table-column>
-    <el-table-column
-      prop="email"
-      label="Email">
-    </el-table-column>
-  </el-table>
+    <Button label="Primary" class="p-button-raised p-button-rounded"
+        >Test</Button
+    >
+    <DataTable
+        id="table"
+        :value="teacherList.teacherList"
+        v-model:selection="selectedTeacher1"
+        selectionMode="single"
+        dataKey="idTeacher"
+        responsiveLayout="scroll"
+    >
+        <Column field="name" header="Name"></Column>
+        <Column field="lastname" header="Last name"></Column>
+        <Column field="subjects" header="Subjects"></Column>
+        <Column field="email" header="Email address"></Column>
+        <Column field="telephoneNumber" header="Telephone number"></Column>
+    </DataTable>
 </template>
 
 <script>
-//import { ref, computed } from "vue";
+import DataTable from 'primevue/datatable'
+import Column from 'primevue/column'
+import Button from 'primevue/button'
 
 export default {
+    components: {
+        DataTable,
+        Column,
+        Button,
+    },
     data() {
         return {
             teacherList: [],
-            
+            selectedTeacher1: null,
         }
     },
     methods: {
         getAllTeachers() {
-            fetch(`http://localhost:3000/v1/getAllTeachersWithAssignedSubject`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(),
-            })
+            fetch(
+                `http://localhost:3000/v1/getAllTeachersWithAssignedSubject`,
+                {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(),
+                }
+            )
                 .then((Response) => {
                     if (Response.status == 400) {
                         throw new Error('Invalid credentials')
@@ -76,10 +70,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1{
-  margin:auto;
+h1 {
+    margin: auto;
 }
-#table{
-  margin:auto;
+#table {
+    margin: auto;
+    width: 50%;
 }
 </style>

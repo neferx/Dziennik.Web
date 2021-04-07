@@ -25,8 +25,11 @@ export default {
 <style lang="scss" scoped>
 .navbar {
     height: 70px;
+    width: 50%;
     display: flex;
     justify-content: center;
+    background: pink;
+    margin-left: auto;
 }
 .element {
     //padding:20px 40px 20px 40px;
@@ -35,7 +38,7 @@ export default {
     border-right: 1px solid gray;
     transition: all 0.35s linear;
     height: 100%;
-    width: 10%;
+    width: 100%;
     :last-child {
         border-right: none;
     }
@@ -46,7 +49,7 @@ export default {
     &:hover {
         //transform:rotate(360deg);
         height: 105%;
-        width: 11%;
+        width: 105%;
     }
     a {
         justify-content: center;
