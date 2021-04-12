@@ -5,6 +5,10 @@
             <!-- <img src="../assets/logo.png"/> -->
         </div>
         <div class="element">
+            <router-link to="/profile">Profile</router-link>
+            <!-- <img src="../assets/logo.png"/> -->
+        </div>
+        <div class="element">
             <router-link to="/about">About</router-link>
             <!-- <img src="../assets/logo.png"/> -->
         </div>
