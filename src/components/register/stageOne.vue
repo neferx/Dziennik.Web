@@ -319,6 +319,7 @@
 
                     <div class="p-field p-col-12 p-md-12">
                         <Dropdown
+                            class="dropdown-panel"
                             v-model="v$.selectedRole.$model"
                             :options="roles"
                             optionLabel="name"
@@ -456,3 +457,29 @@ export default {
     },
 }
 </script>
+
+<style lang="scss" scoped>
+#card {
+    background-color: #fafafa;
+}
+.p-inputtext {
+    background-color: #fafafa;
+}
+.p-dropdown {
+    background-color: #fafafa;
+}
+
+.p-dropdown-items {
+    background-color: red;
+    font-size: 50px;
+}
+
+.p-dropdown-open {
+    background-color: red;
+    font-size: 50px;
+}
+
+::v-deep(.p-password-input) {
+    background-color: #fafafa;
+}
+</style>

@@ -4,6 +4,9 @@ import TeacherList from '../views/TeacherList.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 import Profile from '../views/Profile.vue'
+import Subjects from '../components/profile/Subjects.vue'
+import Remarks from '../components/profile/Remarks.vue'
+import Presences from '../components/profile/Presences.vue'
 
 const routes = [
     {
@@ -15,7 +18,25 @@ const routes = [
         path: '/profile',
         name: 'Profile',
         component: Profile,
+        children: [
+            {
+                path: '/subjects',
+                name: 'Subjects',
+                component: Subjects,
+            },
+            {
+                path: '/presences',
+                name: 'Presences',
+                component: Presences,
+            },
+            {
+                path: '/remarks',
+                name: 'Remarks',
+                component: Remarks,
+            },
+        ],
     },
+
     {
         path: '/teacherlist',
         name: 'Teacher List',

@@ -17,3 +17,19 @@ body {
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+:root {
+    --primary-color: #2196f3;
+    --primary-color-light: #51abf6;
+    --primary-color-dark: #0c85e9;
+
+    --secondary-color: #21a179;
+    --secondary-color-light: #1c8765;
+    --secondary-color-dark: #34d5a2;
+
+    --warning-color: #f1042b;
+
+    --text-color-1: #343434;
+    --text-color-2: #474747;
+    --text-color-3: #d1d1d1;
+}

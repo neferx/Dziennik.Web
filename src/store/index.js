@@ -16,6 +16,8 @@ export default createStore({
         buildingNumber: null,
         telephoneNumber: null,
         test: 'test',
+
+        subjects: [],
     },
     mutations: {
         setName(state, payload) {
@@ -59,6 +61,9 @@ export default createStore({
         },
         setTest(state, payload) {
             state.test = payload
+        },
+        setSubjects(state, payload) {
+            state.subjects = payload
         },
     },
     actions: {},
